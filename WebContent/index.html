@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Collaboration </title>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+<script src="RouteConfig.js"></script>
+<script src="Blog/BlogController.js"></script>
+<script src="User/userController.js"></script>
+<script src="forum/forumController.js"></script>
+<script src="job/jobsController.js"></script>
+<script src="Blog/adminBlogController.js"></script>
+</head>
+<body ng-app="myApp">
+Role : {{ currentUser.role }}
+<!--  <nav class="navbar navbar-inverse">   -->
+<table width="100%">
+
+<tr bgcolor="aqua">
+<td> <center><i>Social Collaboration</i></center></td>
+</tr>
+
+
+ <tr bgcolor="orange" height="100%" width="100%">  
+
+<td>
+<a href="#/">Home</a> &nbsp;&nbsp;&nbsp;
+<a href="#/Blog">Blog</a> &nbsp;&nbsp;&nbsp;
+<a href="#/Forum">Forum</a>&nbsp;&nbsp;&nbsp;
+<a href="#/jobs">Jobs</a> &nbsp;&nbsp;&nbsp;
+<a href="#/login">Login</a>&nbsp;&nbsp;&nbsp;
+<a href="#/registration">Registration</a>&nbsp;&nbsp;&nbsp;
+<div ng-show="currentUser.role=='Admin'">
+					<li><a href="#adminBlog"><span
+							class="glyphicon glyphicon-user"></span>Admin Blog</a></li>
+				</div>
+				<div ng-show="currentUser.role=='User'">
+					<li><a href="#logout"><span
+							class="glyphicon glyphicon-off"></span>Logout</a></li>
+				</div>
+				<li><a href="#friend"><span class="glyphicon glyphicon-off"></span>Friends</a></li>
+
+</td>
+</tr>
+<tr>
+<td><div><ng-view></ng-view></div></td>
+</tr>
+</nav>
+
+</table>
+
+</body>
+<br>
+<br>
+<center>Copyright since 2015</center>
+</html>
